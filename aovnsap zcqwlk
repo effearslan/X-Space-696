@@ -1,0 +1,22 @@
+[1mdiff --git a/app/views/shared/_navbar.html.erb b/app/views/shared/_navbar.html.erb[m
+[1mindex 9a68b52..37fd646 100644[m
+[1m--- a/app/views/shared/_navbar.html.erb[m
+[1m+++ b/app/views/shared/_navbar.html.erb[m
+[36m@@ -27,7 +27,7 @@[m
+         </li>[m
+       <% else %>[m
+         <li class="nav-item">[m
+[31m-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>[m
+[32m+[m[32m          <%= link_to "Login", new_user_session_path, class: "nav-link btn btn-primary" %>[m
+         </li>[m
+       <% end %>[m
+     </ul>[m
+[1mdiff --git a/db/seeds.rb b/db/seeds.rb[m
+[1mindex 1beea2a..1c5c33e 100644[m
+[1m--- a/db/seeds.rb[m
+[1m+++ b/db/seeds.rb[m
+[36m@@ -5,3 +5,4 @@[m
+ #[m
+ #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])[m
+ #   Character.create(name: 'Luke', movie: movies.first)[m
+[32m+[m[32muser_1 = User.create!(email:"harun@tik.tok", password: "123456")[m
