@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+<<<<<<< HEAD
   before_action :set_booking, only: [:show, :update, :destroy]
 
   def new
@@ -30,4 +31,10 @@ class BookingsController < ApplicationController
   def space_params
     params.require(:space).permit(:status, :total_price)
   end
+=======
+
+  def show
+    @booking = Booking.find(params[:id])
+  end
+>>>>>>> master
 end

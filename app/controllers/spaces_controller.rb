@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+class SpacesController < ApplicationController\
+
+  def show
+    @space = Space.find(params[:id])
+  end
+
+=======
 class SpacesController < ApplicationController
   before_action :set_space, only: [:show, :edit, :update, :destroy]
 
@@ -11,8 +19,7 @@ class SpacesController < ApplicationController
 
   def create
     @space = Space.new(space_params)
-    @user = User.find(params[:user_id])
-    @space.user = @user
+    @space.user = current_user
 
     if @space.save
       redirect_to @space, notice: 'space was successfully created.'
@@ -31,4 +38,5 @@ class SpacesController < ApplicationController
     def space_params
       params.require(:space).permit(:name, :height, :width, :depth, :destination, :location, :travel_date )
     end
+>>>>>>> 7a5a859ee3fca581430da48d3407ad9083458fed
 end
