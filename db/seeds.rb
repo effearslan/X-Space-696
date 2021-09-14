@@ -18,6 +18,6 @@ space_2 = Space.create!(travel_date: Date.today + 1, destination: "New York", he
 space_3 = Space.create!(travel_date: Date.today + 2, destination: "Beijing",height: 30, width:30, depth:30, price: 300, location: "Madagascar", name:"Space-3", user: user_3 )
 
 
-booking_1 = Booking.create!(total_price: 1000, status: "Approved", user: user_1, space:space_3)
-booking_2 = Booking.create!(total_price: 2000, status: "Pending", user: user_2, space:space_1)
-booking_3 = Booking.create!(total_price: 3000, status: "Declined", user: user_3, space:space_2)
+booking_1 = Booking.create!(total_price: 1000, status: "Approved", user: user_1, space: space_3)
+booking_2 = Booking.create!(total_price: 2000, status: "Pending", user: user_2, space: space_1)
+booking_3 = Booking.create!(total_price: 3000, status: "Declined", user: user_3, space: space_2)
