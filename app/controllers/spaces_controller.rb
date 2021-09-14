@@ -1,4 +1,6 @@
 class SpacesController < ApplicationController
+  before_action :set_space, only: [:show, :edit, :update, :destroy]
+
 
   def new
     @space = Space.new
@@ -6,6 +8,8 @@ class SpacesController < ApplicationController
 
   def create
     @space = Space.new(space_params)
+    @user = User.find(params[:user_id])
+    @space.user = @user
 
     if @space.save
       redirect_to @space, notice: 'space was successfully created.'
@@ -22,6 +26,6 @@ class SpacesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def space_params
-      params.require(:space).permit(:name, :destination, :location, :travel_date :stars)
+      params.require(:space).permit(:name, :height, :width, :depth, :destination, :location, :travel_date )
     end
 end
