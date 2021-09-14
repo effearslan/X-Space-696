@@ -7,12 +7,12 @@
 <% @spaces.each do |space| %>
 
 <ul>
-  <li><%= space.name %> </li>
-  <li><%= space.location %></li>
-  <li><%= space.height %></li>
-  <li><%= space.width %></li>
-  <li><%= space.depth %></li>
-  <li><%= space.price %></li>
+  <li>Name: <%= space.name %> </li>
+  <li>From: <%= space.location %></li>
+  <li>Height: <%= space.height %> cm</li>
+  <li>Width: <%= space.width %> cm</li>
+  <li>Depth: <%= space.depth %> cm</li>
+  <li>Price <%= space.price %> dollars</li>
 </ul>
 <p><%= link_to 'Show', space_path(space) %></p>
 <% end %>
