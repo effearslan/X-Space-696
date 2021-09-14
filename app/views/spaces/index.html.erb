@@ -3,7 +3,9 @@
   <h2>Discover New Spaces</h2>
 </div>
 
+
 <% @spaces.each do |space| %>
+
 <ul>
   <li><%= space.name %> </li>
   <li><%= space.location %></li>
@@ -12,6 +14,5 @@
   <li><%= space.depth %></li>
   <li><%= space.price %></li>
 </ul>
+<p><%= link_to 'Show', space_path(space) %></p>
 <% end %>
-
-<p><%= link_to 'Show', space %></p>
