@@ -1,0 +1,17 @@
+<h1><%= @space.name %></h1>
+
+<h2>Parameters</h2>
+
+<h4><%= @space.width %> cm</h4>
+<h4><%= @space.height %> cm</h4>
+<h4><%= @space.depth %> cm</h4>
+
+<h2>Price of this space is:  <%= @space.price %> $ </h2>
+
+<h2>Trip</h2>
+<h4>From</h4> <%= @space.location %>
+<h4>To</h4> <%= @space.destination %>
+
+<br>
+
+<%= link_to "Home",  spaces_path%>
