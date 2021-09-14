@@ -1,0 +1,20 @@
+<%= simple_form_for(@space) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :height %>
+    <%= f.input :width %>
+    <%= f.input :depth %>
+    <%= f.input :price %>
+    <%= f.input :location %>
+    <%= f.input :travel_date %>
+    <%= f.input :destination %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
