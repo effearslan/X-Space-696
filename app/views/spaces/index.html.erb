@@ -1,12 +1,7 @@
 <h2 class='available-spaces-header'>Available Spaces</h2>
-
-
-
 <% @spaces.each do |space| %>
-<div class='card container' style='width: 18rem;'>
+<div class='card' style='width: 18rem;'>
 <ul class='card-body'>
-<div class=' card ' style='width: 18rem;'>
-<ul class='col flex-box  container-fluid row align-items-start'>
     <li class='card-title'>Name: <%= space.name %> </li>
     <li class='card-text'><strong>From: </strong><%= space.location %></li>
       <div>
@@ -23,5 +18,5 @@
       <% end %> </li>
 </ul>
 </div>
-<p><%= link_to 'Show', space_path(space) %></p>
+<p class='btn btn-primary'><%= link_to 'Show', space_path(space) %> Show</p>
 <% end %>
