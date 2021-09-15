@@ -1,0 +1,44 @@
+<h1>Dashboard</h1>
+
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Bookings</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Spaces</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><% @bookings.each do |booking| %>
+
+  <ul>
+    <li><h4>Space: <%= booking.space.name %></h4></li>
+    <li><%= booking.status %> </li>
+    <li><%= booking.total_price %></li>
+    <li>Sender: <%= booking.user.name %></li>
+    <li>Transporter: <%= booking.space.user.name %></li>
+  </ul>
+  <% end %>
+</div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+  <% @spaces.each do |space| %>
+
+  <ul>
+    <li>Name: <%= space.name %> </li>
+    <li>From: <%= space.location %></li>
+    <li>Height: <%= space.height %> cm</li>
+    <li>Width: <%= space.width %> cm</li>
+    <li>Depth: <%= space.depth %> cm</li>
+    <li>Price <%= space.price %> dollars</li>
+    <li>Status:
+      <% if space.booking %>
+        <%= space.booking.status %>
+      <% else %>
+        <%= "Free to book" %>
+      <% end %> </li>
+  </ul>
+<%end%>
+  </div>
+</div>
