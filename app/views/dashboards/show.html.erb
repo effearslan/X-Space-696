@@ -27,21 +27,21 @@
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
   <% @spaces.each do |space| %>
 
-  <ul>
-    <li>Name: <%= space.name %> </li>
-    <li>From: <%= space.location %></li>
-    <li>Height: <%= space.height %> cm</li>
-    <li>Width: <%= space.width %> cm</li>
-    <li>Depth: <%= space.depth %> cm</li>
-    <li>Price <%= space.price %> dollars</li>
-    <li>Status:
-      <% if space.booking %>
-        <%= space.booking.status %>
-      <% else %>
-        <%= "Free to book" %>
-      <% end %> </li>
-    <%= link_to "Edit", edit_space_path(space) %>
-  </ul>
-<%end%>
-  </div>
-</div>
+    <div class='card-body' style='width: 18rem; background-color:white; margin-top:15px'>
+        <p class='card-title'> <strong>Name:</strong> <%= space.name %> </p>
+        <p class='card-text'><strong>From:</strong> <%= space.location %></p>
+        <p class='card-text'><strong>Height:</strong> <%= space.height %> cm</p>
+        <p class='card-text'><strong>Width:</strong> <%= space.width %> cm</p>
+        <p class='card-text'><strong>Depth:</strong> <%= space.depth %> cm</p>
+        <p class='card-text'><strong>Price:</strong> <%= space.price %> dollars</p>
+        <p class='card-text'><strong>Status:</strong>
+          <% if space.booking %>
+            <%= space.booking.status %>
+          <% else %>
+            <%= "Free to book" %>
+          <% end %>
+          <p><%= link_to "Edit", edit_space_path(space) %></p>
+    </div>
+    <%end%>
+      </div>
+    </div>
