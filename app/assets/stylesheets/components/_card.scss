@@ -1,3 +1,24 @@
-.card-category {
-  color: red;
+
+
+.container {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 3px 4px rgba(128, 128, 128, 0.666);
+  margin: 10px 10px;
+  padding-top: 20px;
+
+}
+
+.card-title {
+  font-size: 20px;
+  background-color: #193E9B;
+  color: white;
+  margin-left: -30px;
+  margin-right: -30px;
+  justify-content: center;
+}
+
+.container li {
+  text-decoration: none;
+  list-style: none;
 }

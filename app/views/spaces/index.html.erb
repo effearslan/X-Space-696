@@ -1,26 +1,25 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1495320520040-44186a20c601?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80)">
-  <h1> XSpace </h1>
-  <h2>Discover New Spaces</h2>
-</div>
+<h2 class='available-spaces-header'>Available Spaces</h2>
+
 
 
 <% @spaces.each do |space| %>
-
-<ul>
-  <li>Name: <%= space.name %> </li>
-  <li>From: <%= space.location %></li>
-  <li>Height: <%= space.height %> cm</li>
-  <li>Width: <%= space.width %> cm</li>
-  <li>Depth: <%= space.depth %> cm</li>
-  <li>Price <%= space.price %> dollars</li>
-  <li>Status:
-    <% if space.booking %>
-      <%= space.booking.status %>
-    <% else %>
-      <%= "Free to book" %>
-    <% end %> </li>
-
-
+<div class=' container container-md rounded-top ' style='width: 18rem;'>
+<ul class='col flex-box  container-fluid row align-items-start'>
+    <li class='card-title'>Name: <%= space.name %> </li>
+    <li class='list'>From: <%= space.location %></li>
+      <div>
+        <li class='list'>Height: <%= space.height %> cm</li>
+        <li class='list'>Width: <%= space.width %> cm</li>
+        <li class='list'>Depth: <%= space.depth %> cm</li>
+      </div>
+    <li class='list'>Price <%= space.price %> dollars</li>
+    <li class='list'>Status:
+      <% if space.booking %>
+        <%= space.booking.status %>
+      <% else %>
+        <%= "Free to book" %>
+      <% end %> </li>
 </ul>
+</div>
 <p><%= link_to 'Show', space_path(space) %></p>
 <% end %>
