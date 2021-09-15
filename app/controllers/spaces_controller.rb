@@ -33,9 +33,10 @@ class SpacesController < ApplicationController
 
   end
 
-  # def method_name
-
-  # end
+  def destroy
+    @space.destroy
+    redirect_to spaces_path
+  end
 
   private
 
