@@ -1,4 +1,4 @@
-<h1>Dashboard</h1>
+<h1>Wellcome to Your Dashboard</h1>
 
 
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -13,13 +13,15 @@
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><% @bookings.each do |booking| %>
 
-  <ul>
-    <li><h4>Space: <%= booking.space.name %></h4></li>
-    <li><%= booking.status %> </li>
-    <li><%= booking.total_price %></li>
-    <li>Sender: <%= booking.user.name %></li>
-    <li>Transporter: <%= booking.space.user.name %></li>
-  </ul>
+ <div class="booking" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Space: </strong> <%= booking.space.name %></h5>
+    <p class="card-text"><strong>Status: </strong><%= booking.status %></p>
+    <p class="card-text"><strong>Price: </strong><%= booking.total_price %>$</p>
+    <p class="card-text"><strong>Sender: </strong><%= booking.user.name %></p>
+    <p class="card-text"><strong>Transporter: </strong><%= booking.space.user.name %></p>
+  </div>
+</div>
   <% end %>
 </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">

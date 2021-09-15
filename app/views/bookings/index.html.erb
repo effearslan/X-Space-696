@@ -5,6 +5,15 @@
 
 <% @bookings.each do |booking| %>
 
+ <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Space:</strong> <%= booking.space.name %></h5>
+    <p class="card-text"><strong>Status:</strong><%= booking.status %></p>
+    <p class="card-text"><strong>Price:</strong><%= booking.total_price %></p>
+    <p class="card-text"><strong>Sender: </strong><%= booking.user.name %></p>
+    <p class="card-text"><strong>Transporter: </strong><%= booking.space.user.name %></p>
+  </div>
+</div>
 
 <ul>
   <li><h4>Space: <%= booking.space.name %></h4></li>
