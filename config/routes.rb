@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   end
 
   # /spaces/id/bookings/new
-
-
   resources :bookings, only: [:show, :update] do
     member do
       patch :approve
@@ -16,13 +14,6 @@ Rails.application.routes.draw do
     end
   end
 
-                    #    space_bookings POST   /spaces/:space_id/bookings(.:format)                                                     bookings#create
-                    # new_space_booking GET    /spaces/:space_id/bookings/new(.:format)                                                 bookings#new
-                    #   approve_booking PATCH  /bookings/:id/approve(.:format)                                                          bookings#approve
-                    #   decline_booking PATCH  /bookings/:id/decline(.:format)                                                          bookings#decline
-                    #           booking GET    /bookings/:id(.:format)                                                                  bookings#show
-                    #                   PATCH  /bookings/:id(.:format)                                                                  bookings#update
-                    #                   PUT    /bookings/:id(.:format)                                                                  bookings#update
-
+  resource :dashboard, only: [:show]
 
 end

@@ -12,6 +12,13 @@
 <h4>From</h4> <%= @space.location %>
 <h4>To</h4> <%= @space.destination %>
 
+<h4>Status:
+    <% if @space.booking %>
+      <%= @space.booking.status %>
+    <% else %>
+      <%= "Free to book" %>
+    <% end %> </h4>
+
 <br>
 
 <%= link_to "Home",  spaces_path%>

@@ -13,6 +13,14 @@
   <li>Width: <%= space.width %> cm</li>
   <li>Depth: <%= space.depth %> cm</li>
   <li>Price <%= space.price %> dollars</li>
+  <li>Status:
+    <% if space.booking %>
+      <%= space.booking.status %>
+    <% else %>
+      <%= "Free to book" %>
+    <% end %> </li>
+
+
 </ul>
 <p><%= link_to 'Show', space_path(space) %></p>
 <% end %>
