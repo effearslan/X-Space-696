@@ -3,17 +3,17 @@
 
 
 <% @spaces.each do |space| %>
-<div class='card' style='width: 18rem;'>
+<div class='card container' style='width: 18rem;'>
 <ul class='card-body'>
     <li class='card-title'>Name: <%= space.name %> </li>
-    <li class='list'>From: <%= space.location %></li>
+    <li class='card-text'><strong>From: </strong><%= space.location %></li>
       <div class="col align-self-start">
-        <li class='list'>Height: <%= space.height %> cm</li>
-        <li class='list'>Width: <%= space.width %> cm</li>
-        <li class='list'>Depth: <%= space.depth %> cm</li>
+        <li class='card-text'><strong>Height:</strong> <%= space.height %> cm</li>
+        <li class='card-text'><strong>Width:</strong> <%= space.width %> cm</li>
+        <li class='card-text'><strong>Depth:</strong> <%= space.depth %> cm</li>
       </div>
-    <li class='list'>Price <%= space.price %> dollars</li>
-    <li class='list'>Status:
+    <li class='card-text'><strong>Price </strong><%= space.price %> dollars</li>
+    <li class='card-text'><strong>Status:</strong>
       <% if space.booking %>
         <%= space.booking.status %>
       <% else %>
