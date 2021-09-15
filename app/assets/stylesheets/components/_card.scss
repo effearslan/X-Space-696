@@ -29,5 +29,14 @@ h1 {
 .card-title {
   background-color: rgb(6, 92, 173);
   color: aliceblue;
-  padding: 20px;
+  padding: 2px;
+}
+
+.card-body {
+  list-style: none;
+}
+
+.btn {
+  margin-left: 10px;
+  text-align: center;
 }
