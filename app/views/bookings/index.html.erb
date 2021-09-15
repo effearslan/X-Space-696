@@ -3,14 +3,15 @@
   <h2>ALL BOOKINGS</h2>
 </div>
 
-
 <% @bookings.each do |booking| %>
 
+
 <ul>
+  <li><h4>Space: <%= booking.space.name %></h4></li>
   <li><%= booking.status %> </li>
-  <li><%= space.total_price %></li>
-  <li><%= booking.user %></li>
-  <li><%= booking.space.user %></li>
+  <li><%= booking.total_price %></li>
+  <li>Sender: <%= booking.user.name %></li>
+  <li>Transporter: <%= booking.space.user.name %></li>
 </ul>
 <p><%= link_to 'Show', booking_path(booking) %></p>
 <% end %>

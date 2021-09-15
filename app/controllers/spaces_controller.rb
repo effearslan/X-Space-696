@@ -6,6 +6,7 @@ class SpacesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -31,6 +32,10 @@ class SpacesController < ApplicationController
     end
 
   end
+
+  # def method_name
+
+  # end
 
   private
 
