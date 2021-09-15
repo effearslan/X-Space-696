@@ -3,11 +3,11 @@
 
 
 <% @spaces.each do |space| %>
-<div class=' container container-md rounded-top ' style='width: 18rem;'>
-<ul class='col flex-box  container-fluid row align-items-start'>
+<div class='container' style='width: 18rem;'>
+<ul class='row'>
     <li class='card-title'>Name: <%= space.name %> </li>
     <li class='list'>From: <%= space.location %></li>
-      <div>
+      <div class="col align-self-start">
         <li class='list'>Height: <%= space.height %> cm</li>
         <li class='list'>Width: <%= space.width %> cm</li>
         <li class='list'>Depth: <%= space.depth %> cm</li>
