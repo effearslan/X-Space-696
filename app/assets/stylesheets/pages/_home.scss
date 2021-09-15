@@ -1,1 +1,95 @@
 // Specific CSS for your home-page
+.container {
+  position: relative;
+  margin: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  // position: ;
+  // text-align: ;
+}
+.main-page-pic {
+  width: 1658px;
+  height: 705px;
+}
+
+.text-main-page-banner {
+  position: absolute;
+  top: 32%;
+  left: 20%;
+}
+
+.logo-text {
+
+font-family: Work Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 50px;
+line-height: 59px;
+/* identical to box height */
+
+letter-spacing: -0.02em;
+
+color: #193E9B;
+}
+
+.brand-tagline {
+
+font-family: Work Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 32px;
+line-height: 45px;
+/* identical to box height */
+
+letter-spacing: -0.02em;
+
+color: #000000;
+}
+
+.brand-tagline strong {
+  color: #193E9B;
+}
+
+.main-attract-customer-txt {
+font-family: Work Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 28px;
+letter-spacing: -0.02em;
+margin-top: 0px;
+padding-top: 10px;
+
+color: #7F838E;
+}
+
+.main-button {
+  width: 233px;
+  height: 57px;
+  left: 74px;
+  top: 376px;
+  color: #ffffff;
+  background-color: #193E9B;
+  border-radius: 6px;
+}
+
+.text-for-existing-account {
+  margin-top: 10px;
+  width: 217px;
+  height: 16px;
+  left: calc(50% - 217px/2 - 529.5px);
+  top: calc(50% - 16px/2 - 383px);
+
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.02em;
+  color: #7F838E;
+}
+
+.text-for-existing-account strong {
+  font-size: 13px;
+  color: #193E9B;
+}
