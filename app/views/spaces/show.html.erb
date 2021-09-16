@@ -23,11 +23,11 @@
 
 <br>
 
-
-<% @space.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-
+  <div class='flexbox'>
+    <% @space.photos.each do |photo| %>
+        <%=cl_image_tag photo.key, class:'bagimageholder'%>
+    <% end %>
+  </div>
   <%# button for creating booking %>
 <%= simple_form_for([@space, @booking]) do |f| %>
   <%= f.error_notification %>
