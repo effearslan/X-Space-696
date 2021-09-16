@@ -39,7 +39,7 @@
       <img src="https://images.unsplash.com/photo-1448582649076-3981753123b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bHVnZ2FnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
 " alt="luggage image">
       <li class='title'><%= space.name %> </li>
-      <div class='card-dimension'>
+      <div class='dimension'>
       <li class='card-text'><span>From: </span><%= space.location %></li>
       <li class='card-text'><span>To: </span><%= space.destination %></li>
       </div>
@@ -54,8 +54,10 @@
           <% if space.booking %>
             <%= space.booking.status %>
             <p class='card-text'><span>Booker:</span> <%= space.booking.user.name %></p>
-            <%# <p><%= link_to "Approve",  approve_booking_path(space.booking), method: :patch %>
-            <p><%#= link_to "Decline",  decline_booking_path(space.booking), method: :patch %></p>
+            <div class='btn-container'>
+            <p><%= link_to "Approve",  approve_booking_path(space.booking), method: :patch, class:'btn-confirm btn-approve' %></p>
+            <p><%= link_to "Decline",  decline_booking_path(space.booking), method: :patch, class:'btn-confirm btn-decline' %></p>
+            </div>
           <% else %>
             <%= "Free to book" %>
           <% end %>
