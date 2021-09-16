@@ -18,7 +18,8 @@ class BookingsController < ApplicationController
     @space = Space.find(params[:space_id])
     @booking.user = current_user
     @booking.space = @space
-    @booking.total_price = @space.price + 10
+    @booking.total_price = @
+    space.price + 10
     @booking.status = "Pending"
     if @booking.save
       redirect_to spaces_path, notice: "booking was successfully created."
