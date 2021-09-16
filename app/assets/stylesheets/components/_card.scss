@@ -30,6 +30,8 @@ span {
   justify-content: start;
   align-items: flex-start;
   grid-gap: 4rem;
+  margin-top: 35px;
+  margin-left: 15px;
 }
 .card-info {
   padding: 2rem;
@@ -121,7 +123,29 @@ span {
   &:hover a {
     transition: 250ms;
     text-decoration: none;
-    color: $white;
-
     }
+}
+.btn-confirm {
+  color: white;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding: 8px 15px;
+  width: 300px;
+    &:hover {
+      background-color: #cde6f3;
+      color: $dark-gblue;
+      text-decoration: none;
+    }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  .btn-decline {
+    background-color: #F24464;
+  }
+  .btn-approve {
+    background-color: #37A6A6;
+  }
 }
