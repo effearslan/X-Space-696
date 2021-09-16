@@ -51,6 +51,6 @@ class SpacesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def space_params
-    params.require(:space).permit(:name, :height, :width, :depth, :destination, :location, :travel_date, :price )
+    params.require(:space).permit(:name, :height, :width, :depth, :destination, :location, :travel_date, :price, photos: [] )
   end
 end
