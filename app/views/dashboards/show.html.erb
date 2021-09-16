@@ -26,7 +26,6 @@
   <% end %>
 </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
 <div class="card-wrapper">
   <% @spaces.each do |space| %>
   <%# <a class="card" style="--bg-img: url(https://images.unsplash.com/photo-1610244767159-0f9797ff1926?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bHVnZ2FnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60
@@ -55,6 +54,8 @@
           <% if space.booking %>
             <%= space.booking.status %>
             <p class='card-text'><span>Booker:</span> <%= space.booking.user.name %></p>
+            <%# <p><%= link_to "Approve",  approve_booking_path(space.booking), method: :patch %>
+            <p><%#= link_to "Decline",  decline_booking_path(space.booking), method: :patch %></p>
           <% else %>
             <%= "Free to book" %>
           <% end %>
