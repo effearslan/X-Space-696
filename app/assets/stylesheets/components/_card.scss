@@ -27,7 +27,7 @@ span {
 .card-wrapper {
 	display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
+  justify-content: start;
   align-items: flex-start;
   grid-gap: 4rem;
 }
@@ -62,8 +62,8 @@ span {
   // border-bottom: 1px dashed rgb(168, 167, 167);
 }
 
-
 .card-text {
+  color:rgb(61, 61, 61);
   margin: 10px;
   font-weight: bold;
   font-size: 20px;
@@ -88,5 +88,40 @@ span {
     transition: 250ms;
     text-decoration: none;
     color: $white;
+    }
+}
+
+.dimension {
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+}
+
+.card-btn {
+  color: $white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 5px;
+  transition: 250ms;
+  font-size: 2rem;
+  &:hover {
+    background: $light-blue;
+    transition: 250ms;
+    text-decoration: none;
+    color: $white;
+    }
+}
+.card-tools {
+  position: relative;
+  top: 2px;
+  left: 320px;
+  padding: 0;
+  &:hover a {
+    transition: 250ms;
+    text-decoration: none;
+    color: $white;
+
     }
 }
