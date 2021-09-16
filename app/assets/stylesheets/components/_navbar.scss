@@ -1,13 +1,25 @@
-.navbar-lewagon {
+.navbar-xspace {
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  z-index: 10;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-xspace .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-xspace .navbar-brand img {
   width: 100px;
 
+}
+
+.nav-link {
+  color: white;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #cde6f3;
+}
+
+.nav-link:hover {
+  background-color: #bad1dd;
 }

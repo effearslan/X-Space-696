@@ -1,15 +1,21 @@
 // Specific CSS for your home-page
+body {
+  background-color: rgb(253, 253, 253);
+}
+
 .container {
-  position: relative;
-  margin: 0px;
-  margin-left: 0px;
-  padding-top: 0px;
-  // position: ;
-  // text-align: ;
+
+  background-color: white;
+  position: absolute;
+  margin-left: -1%;
+  margin-top: 0%;
+  top: 0;
 }
 .main-page-pic {
-  width: 1658px;
-  height: 705px;
+  position: relative;
+  height: 980px;
+  width: 100vw;
+  object-fit: cover;
 }
 
 .text-main-page-banner {
@@ -23,7 +29,7 @@
 font-family: Work Sans;
 font-style: normal;
 font-weight: bold;
-font-size: 50px;
+font-size: 50px auto;
 line-height: 59px;
 /* identical to box height */
 
@@ -71,7 +77,13 @@ color: #7F838E;
   color: #ffffff;
   background-color: #193E9B;
   border-radius: 6px;
+  font-size: 24px;
+  margin-left: -1%;
 }
+.main-button:hover {
+      background-color: #6682c9;
+      border: white;
+  }
 
 .text-for-existing-account {
   margin-top: 10px;
@@ -90,6 +102,37 @@ color: #7F838E;
 }
 
 .text-for-existing-account strong {
+  font-family: 'Times New Roman', Times, serif;
   font-size: 13px;
   color: #193E9B;
+}
+
+.arrow-down-scroll {
+  position: absolute;
+  margin-top: 60%;
+  margin-left: 40vw;
+  height: 40px;
+  width: 40px;
+  opacity: 50%;
+}
+
+.text-down-scroll {
+  text-align: center;
+  position: absolute;
+  font-size: 17px;
+  margin-top: 50%;
+  margin-left: 40vw;
+  opacity: 50%;
+}
+
+.space-txt-main-page {
+    box-shadow: 0px 2px 6px 4px rgba(128, 128, 128, 0.309);
+    position: absolute;
+    padding-top: 2px;
+    padding-bottom: 7px;
+    margin-left: 42vw;
+    margin-top: 3%;
+    text-align: center;
+    background-color: #193E9B;
+    color: white;
 }
