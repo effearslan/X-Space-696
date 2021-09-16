@@ -58,8 +58,6 @@
           <% else %>
             <%= "Free to book" %>
           <% end %>
-        <p><%= link_to "Approve",  approve_booking_path(space.booking), method: :patch %>
-        <p><%= link_to "Decline",  decline_booking_path(space.booking), method: :patch %>
     </div>
   <%= link_to 'Show', space_path(space), class: 'btn-wide' %>
   </div>
