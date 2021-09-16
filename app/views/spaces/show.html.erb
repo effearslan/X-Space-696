@@ -1,5 +1,6 @@
 <h1><%= @space.name %></h1>
 
+
 <h2>Parameters</h2>
 
 <h4><%= @space.width %> cm</h4>
@@ -11,6 +12,7 @@
 <h2>Trip</h2>
 <h4>From</h4> <%= @space.location %>
 <h4>To</h4> <%= @space.destination %>
+<h3>Travel Date: <%= @space.travel_date %></h3>
 
 <h4>Status:
     <% if @space.booking %>
