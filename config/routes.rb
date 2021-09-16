@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
+
+
+
   resources :bookings, only: :destroy
 
   resource :dashboard, only: [:show]
