@@ -1,0 +1,13 @@
+.bagimageholder {
+	width: 250px;
+  height: 250px;
+  border-radius: 5%;
+  border: 1px solid rgb(133, 150, 177);
+  margin: 15px;
+  box-shadow: 1px 1px 2px lightblue;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-evenly;
+}
