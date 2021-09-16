@@ -20,12 +20,17 @@ class BookingsController < ApplicationController
     @booking.space = @space
     @booking.total_price = @space.price + 10
     @booking.status = "Pending"
-
     if @booking.save
-      redirect_to spaces_path, notice: 'booking was successfully created.'
+      redirect_to spaces_path, notice: "booking was successfully created."
     else
       render :new
     end
+  end
+
+  def destroy
+      @booking = Booking.find(params[:id])
+      @booking.destroy
+      redirect_to dashboard_path
   end
 
   private
