@@ -13,6 +13,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def destroy
+    @booking = Booking.destroy
+  end
+
   def create
     @booking = Booking.new
     @space = Space.find(params[:space_id])
