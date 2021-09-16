@@ -5,6 +5,6 @@ class Space < ApplicationRecord
   validates :depth, :height, :width, numericality: { greater_than: 0, less_than_or_equal_to: 100 }
   validates :price, numericality: { greater_than: 0 }
   validates :name, uniqueness: true
-  validates :destination, uniqueness: { scope: :location }
+  validates :destination, exclusion: { in: :location }
   # validates :travel_date, not_in_past: true
 end
