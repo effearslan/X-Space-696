@@ -1,21 +1,41 @@
-<h1>Create your space for rent!</h1>
-
 <%= simple_form_for(@space) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class='form-background'>
+    <div class="form-group">
+    <h1 class='form-intro'>Create your space for rent!</h1>
+        <li class="form-text inputs form-group" style="width: 40rem">
+            <%= f.input :name %>
+        </li>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :height %>
-    <%= f.input :width %>
-    <%= f.input :depth %>
-    <%= f.input :price %>
-    <%= f.input :location %>
-    <%= f.input :destination %>
-    <%= f.input :travel_date %>
-  </div>
+        <div class='dimension-form' style='width: 40rem'>
+            <li class="inputs-col  ">
+                <%= f.input :height %>
+            </li>
+            <li class="inputs-col  ">
+                <%= f.input :width %>
+            </li>
+            <li class="inputs-col ">
+                <%= f.input :depth %>
+            </li>
+        </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+        <li class="inputs form-group" style="width: 40rem">
+            <%= f.input :price %>
+        </li>
+        <li class="inputs form-group" style="width: 40rem">
+            <%= f.input :location %>
+        </li>
+        <li class="inputs form-group" style="width: 40rem">
+            <%= f.input :destination %>
+        </li>
+        <li class="inputs form-group" style="width: 40rem">
+            <%= f.input :travel_date %>
+        </li>
+        <div class='btn'>
+        <%= f.button :submit %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>

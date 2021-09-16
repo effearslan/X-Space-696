@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions" }
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :spaces, only: [:show, :new, :create, :index, :edit, :update, :destroy] do
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       patch :decline
     end
   end
+
+  resources :bookings, only: :destroy
 
   resource :dashboard, only: [:show]
 

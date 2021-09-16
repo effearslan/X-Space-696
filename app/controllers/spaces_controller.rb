@@ -34,8 +34,12 @@ class SpacesController < ApplicationController
   end
 
   def destroy
+    if @space.booking.present?
+      @booking = @space.booking
+      @booking.destroy
+    end
     @space.destroy
-    redirect_to spaces_path
+    redirect_to dashboard_path
   end
 
   private
