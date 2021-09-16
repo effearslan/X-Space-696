@@ -38,14 +38,15 @@
         <p class='card-text'><strong>Depth:</strong> <%= space.depth %> cm</p>
         <p class='card-text'><strong>Price:</strong> <%= space.price %> dollars</p>
         <p class='card-text'><strong>Status:</strong>
-          <% if space.booking != 'Pending'%>
+          <% if space.booking %>
             <%= space.booking.status %>
             <p><strong>Booker:</strong> <%= space.booking.user.name %></p>
+            <p><%= link_to "Approve",  approve_booking_path(space.booking), method: :patch %>
+            <p><%= link_to "Decline",  decline_booking_path(space.booking), method: :patch %>
           <% else %>
             <%= "Free to book" %>
           <% end %>
-          <p><%= link_to "Approve",  approve_booking_path(space.booking), method: :patch %>
-          <p><%= link_to "Decline",  decline_booking_path(space.booking), method: :patch %>
+
           <p><%= link_to "Edit", edit_space_path(space) %></p>
           <p><%= link_to "Delete", space, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     </div>
