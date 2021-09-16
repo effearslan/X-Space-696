@@ -1,43 +1,92 @@
-.card {
-  display: flex;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 3px 4px rgba(128, 128, 128, 0.666);
-  margin: 10px 10px;
-  padding-top: 20px;
+$dark-blue: #2277B8;
+$light-blue: #B5DFF5;
+$grey-blue: #88A6C0;
+$grey: #6C8599;
+$dark-gblue: #57758D;
+$white: white;
+
+.available-spaces-header {
+  padding: 10px;
+  margin: 10px 10px 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  text-shadow: 0px 0px 10px 2px rgba(83, 82, 82, 0.678);
+  color: $dark-blue;
 }
 
-h1 {
-  margin: 10px;
+img {
+  width: 100%;
+  opacity: 0.8;
 }
 
-#pills-tab {
-  margin: 10px;
+span {
+  color: $dark-gblue ;
 }
 
-.cards {
-  border: solid 1px #D9D2D2;
-  display: inline-block;
-  margin: 10px;
-  border-radius: 0 0 12px 0;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.card-wrapper {
+	display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: flex-start;
+  grid-gap: 4rem;
+}
+.card-info {
+  padding: 2rem;
+}
+.card-space {
+  padding: 2rem 0 0 0;
+  margin: 0 auto;
+  width: 24rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 2px rgb(124, 133, 150);
+     li {
+      list-style: none;
+    }
   &:hover {
       transform: scale(1.08);
       box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
     }
 }
 
-.card-title {
-  background-color: rgb(6, 92, 173);
-  color: aliceblue;
-  padding: 2px;
-}
-
-.card-body {
-  list-style: none;
-}
-
-.show-btn {
-  margin-left: 10px;
+.title {
+  // background-color: rgb(6, 92, 173);
   text-align: center;
-  color: white;
+  color: $light-blue;
+  font-weight: bolder;
+  font-size: 20px;
+  position: relative;
+  margin: -40px 0 20px 0;
+  padding: 0 0 5px 0;
+  // border-bottom: 1px dashed rgb(168, 167, 167);
+}
+
+
+.card-text {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.btn-wide {
+  display: block;
+  list-style: none;
+  background: $grey-blue;
+  background-size: cover;
+  color: $white;
+  text-decoration: none;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 10px;
+  transition: 250ms;
+  &:hover {
+    background: $light-blue;
+    transition: 250ms;
+    text-decoration: none;
+    color: $white;
+    }
 }
