@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :update, :destroy]
+  before_action :set_booking, only: [:show, :update, :destroy, :approve, :decline]
 
   def new
     @booking = Booking.new
@@ -13,10 +13,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def destroy
-    @booking = Booking.destroy
-  end
-
   def create
     @booking = Booking.new
     @space = Space.find(params[:space_id])
@@ -26,16 +22,28 @@ class BookingsController < ApplicationController
     space.price + 10
     @booking.status = "Pending"
     if @booking.save
-      redirect_to spaces_path, notice: "booking was successfully created."
+      redirect_to spaces_path, notice: "Booking was successfully created."
     else
       render :new
     end
   end
 
   def destroy
-      @booking = Booking.find(params[:id])
-      @booking.destroy
-      redirect_to dashboard_path
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path
+  end
+
+  def approve
+    @booking.status = 'Approved'
+    @booking.save
+    redirect_to dashboard_path, notice: 'Booking approved'
+  end
+
+  def decline
+    @booking.status = 'Declined'
+    @booking.save
+    redirect_to dashboard_path, notice: 'Booking declined'
   end
 
   private
