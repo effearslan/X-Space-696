@@ -1,7 +1,15 @@
 .sm-container {
+  border-radius: 6px;
+  position: absolute;
   background-color: rgb(255, 255, 255);
-  box-shadow: 2px 2px 4px 4px rgba(128, 128, 128, 0.418);
-  width: 500px;
-  margin-left: 25%;
-  // display: flex;
+  box-shadow: 2px 2px 4px 2px rgba(179, 177, 177, 0.466);
+  width: 600px;
+  margin-left: 33%;
+  top: 140px;
+  object-fit: cover;
+}
+
+.background-img-all {
+  width: 100vw;
+  height: 100vw;
 }
