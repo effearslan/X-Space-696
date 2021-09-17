@@ -1,48 +1,62 @@
-<div class='big-container'>
-  <%= image_tag "backround-main.jpg", alt: "Home", class: "background-img-all" %>
-    <div class='sm-container' id='container'>
-        <div class="select-img-and-name">
-          <div class='card-img-top'>
-            <h1><%= @space.name %></h1>
-            <% @space.photos.each do |photo| %>
-                <%=cl_image_tag photo.key, class:'bagimageholder'%>
-            <% end %>
-        </div>
-
-        <div class="dimension-space-card">
-          <h2>Parameters</h2>
-          <h4><%= @space.width %> cm</h4>
-          <h4><%= @space.height %> cm</h4>
-          <h4><%= @space.depth %> cm</h4>
-        </div>
-
-        <div class="pric-space-card">
-          <h2>Price of this space is:  <%= @space.price %> $ </h2>
-        </div>
-        <div class="travel-space-card">
-          <h2>Trip</h2>
-          <h4>From</h4> <%= @space.location %>
-          <h4>To</h4> <%= @space.destination %>
-          <h3>Travel Date: <%= @space.travel_date %></h3>
-        </div>
-        <div class="status-space-card">
-            <h4>Status:
-            <% if @space.booking %>
-              <%= @space.booking.status %>
-            <% else %>
-              <%= "Free to book" %>
-            <% end %> </h4>
-        </div>
-
-        <div class="button-for-create-space">
-        <%# button for creating booking %>
-        <%= simple_form_for([@space, @booking]) do |f| %>
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-          <div class="btn">
-          <%= f.button :submit %>
+<div class='big-containerx'>
+  <%# <%= image_tag "backround-main.jpg", alt: "Home", class: "background-img-all" %>
+    <%# <div class="card mb-3" style="max-width: 900px;"> %>
+      <div class="sm-container d-flex bd-highlight">
+        <div class=" img-name-container">
+          <h2 class='main-space-name-abs title-text-space'><%= @space.name %></h2>
+          <div>
+              <% @space.photos.each do |photo| %>
+                  <%=cl_image_tag photo.key, class:'bagimageholder'%>
+              <% end %>
           </div>
-        <% end %>
         </div>
-  </div>
+        <div class="info-space-card">
+          <div class="dimension-space-card d-flex">
+            <h2 class='title-text-space'>Parameters</h2>
+            <h4 class='result-text-space'> width: <%= @space.width %> cm</h4>
+            <h4 class='result-text-space'>height: <%= @space.height %> cm</h4>
+            <h4 class='result-text-space'>depth: <%= @space.depth %> cm</h4>
+          </div>
+
+          <div class="pric-space-card d-flex">
+            <h2 class='title-text-space'>Price of this space is: </h2>
+            <h2 class='result-text-space'><%= @space.price %> $</h2>
+          </div>
+
+          <div class="travel-space-card">
+            <h2 class='title-text-space'>Trip details </h2>
+            <div class="from-travel-text d-flex">
+              <h2 class='title-text-space'>🛫 From:</h2>
+              <h2 class='result-text-space'><%= @space.location %></h2>
+            </div>
+            <div class="to-travel-text d-flex">
+              <h2 class='title-text-space'>🛬 To:</h4>
+              <h2 class='result-text-space'><%= @space.destination %></h2>
+            </div>
+            <div class="travel-date-text d-flex">
+            <h2 class='title-text-space'>Travel Date: </h2>
+            <h2 class='result-text-space'><%= @space.travel_date %></h2>
+            </div>
+          </div>
+
+          <div class="status-space-card d-flex">
+              <h2 class='title-text-space'>Status:</h2>
+              <% if @space.booking %>
+                <h2 class='result-text-space'><%= @space.booking.status %></h2>
+              <% else %>
+                <h2 class='title-text-space'></h2>
+                <h2 class='result-text-space'><%= "Free to book" %></h2>
+              <% end %>
+          </div>
+
+          <div class="button-for-create-space">
+            <%# button for creating booking %>
+            <%= simple_form_for([@space, @booking]) do |f| %>
+            <%= f.error_notification %>
+            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+              <div class="btn"> <%= f.button :submit %> </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
 </div>
