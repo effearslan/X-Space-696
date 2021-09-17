@@ -9,56 +9,62 @@
       <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Spaces</a>
     </li>
   </ul>
-  <div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><% @bookings.each do |booking| %>
-    <div class="booking" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><strong>Space: </strong> <%= booking.space.name %></h5>
-    <p class="card-text"><strong>Status: </strong><%= booking.status %></p>
-    <p class="card-text"><strong>Price: </strong><%= booking.total_price %>$</p>
-    <p class="card-text"><strong>Sender: </strong><%= booking.user.name %></p>
-    <p class="card-text"><strong>Transporter: </strong><%= booking.space.user.name %></p>
-    <p><%= link_to "Cancel Booking", booking, method: :delete, data: { confirm: 'Are you sure you want to cancel your space booking?' } %></p>
-  </div>
-  </div>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <% @bookings.each do |booking| %>
+      <div class="booking" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Space: </strong> <%= booking.space.name %></h5>
+          <p class="card-text"><strong>Status: </strong><%= booking.status %></p>
+          <p class="card-text"><strong>Price: </strong><%= booking.total_price %>$</p>
+          <p class="card-text"><strong>Sender: </strong><%= booking.user.name %></p>
+          <p class="card-text"><strong>Transporter: </strong><%= booking.space.user.name %></p>
+          <p><%= link_to "Cancel Booking", booking, method: :delete, data: { confirm: 'Are you sure you want to cancel your space booking?' } %></p>
+        </div>
+      </div>
     <% end %>
   </div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-  <div class="card-wrapper">
-  <% @spaces.each do |space| %>
-    <%# <a class="card" style="--bg-img: url(https://images.unsplash.com/photo-1610244767159-0f9797ff1926?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bHVnZ2FnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60
-    )"> %>
-    <div class="card-space">
-      <div class='card-tools'>
-        <%= link_to "🖊", edit_space_path(space), class:'edit' %>
-        <%= link_to "🗑", space, method: :delete, data: { confirm: 'Are you sure?' }, class:'delete'%>
-      </div>
-      <div class='card-info'>
-        <img src="https://images.unsplash.com/photo-1448582649076-3981753123b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bHVnZ2FnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
-          " alt="luggage image">
-        <li class='title'><%= space.name %> </li>
-        <div class='card-dimension'>
-        <li class='card-text'><span>From: </span><%= space.location %></li>
-        <li class='card-text'><span>To: </span><%= space.destination %></li>
+
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+    <div class="card-wrapper">
+      <% @spaces.each do |space| %>
+        <div class="card-space">
+
+          <div class='card-tools'>
+            <%= link_to "🖊", edit_space_path(space), class:'edit' %>
+            <%= link_to "🗑", space, method: :delete, data: { confirm: 'Are you sure?' }, class:'delete'%>
+          </div>
+
+          <div class='card-info'>
+            <img src="https://images.unsplash.com/photo-1448582649076-3981753123b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bHVnZ2FnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="luggage image">
+            <li class='title'><%= space.name %> </li>
+              <div class='dimension'>
+              <li class='card-text'><span>From: </span><%= space.location.capitalize %></li>
+              <li class='card-text'><span>To: </span><%= space.destination.capitalize %></li>
+              </div>
+            <li class='card-text'><span>Date: </span><%= space.travel_date.strftime('%d-%m-%Y') %></li>
+            <li class='card-text'><span><i class="fas fa-money-bill"></i> </span><%= space.price %> dollars</li>
+              <div class='dimension'>
+                <li class='card-text'><span>Height</span> <%= space.height %> cm</li>
+                <li class='card-text'><span>Width</span> <%= space.width %> cm</li>
+                <li class='card-text'><span>Depth</span> <%= space.depth %> cm</li>
+              </div>
+          </div>
+
+              <% if space.booking %>
+                <p class='card-text'><span>Status: </span><%= space.booking.status %></p>
+                <p class='card-text'><span>Booker:</span> <%= space.booking.user.name %></p>
+                <div class='btn-container'>
+                  <p><%= link_to "Approve",  approve_booking_path(space.booking), method: :patch, class:'btn-approve btn' %></p>
+                  <p><%= link_to "Decline",  decline_booking_path(space.booking), method: :patch, class:'btn-decline btn' %></p>
+                </div>
+              <% else %>
+                <p class='card-text'><span>Status: </span>Free to book</p>
+              <% end %>
+             <%= link_to 'Show', space_path(space), class: 'btn-wide' %>
         </div>
-        <li class='card-text'><span>Date: </span><%= space.travel_date.strftime('%d-%m-%Y') %></li>
-        <li class='card-text'><span><i class="fas fa-money-bill"></i> </span><%= space.price %> dollars</li>
-        <div class='dimension'>
-        <li class='card-text'><span>Height</span> <%= space.height %> cm</li>
-        <li class='card-text'><span>Width</span> <%= space.width %> cm</li>
-        <li class='card-text'><span>Depth</span> <%= space.depth %> cm</li>
-        </div>
-        <p class='card-text'><span>Status:</span>
-            <% if space.booking %>
-              <%= space.booking.status %>
-              <p class='card-text'><span>Booker:</span> <%= space.booking.user.name %></p>
-              <%# <p><%= link_to "Approve",  approve_booking_path(space.booking), method: :patch %>
-              <p><%#= link_to "Decline",  decline_booking_path(space.booking), method: :patch %></p>
-          <% else %>
-            <%= "Free to book" %>
-          <% end %>
-        </div>
-  <%end%>
+      <%end%>
     </div>
   </div>
 <div>
