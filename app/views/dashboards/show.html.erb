@@ -40,8 +40,8 @@
 " alt="luggage image">
       <li class='title'><%= space.name %> </li>
       <div class='dimension'>
-      <li class='card-text'><span>From: </span><%= space.location %></li>
-      <li class='card-text'><span>To: </span><%= space.destination %></li>
+      <li class='card-text'><span>From: </span><%= space.location.capitalize %></li>
+      <li class='card-text'><span>To: </span><%= space.destination.capitalize %></li>
       </div>
       <li class='card-text'><span>Date: </span><%= space.travel_date.strftime('%d-%m-%Y') %></li>
       <li class='card-text'><span><i class="fas fa-money-bill"></i> </span><%= space.price %> dollars</li>
