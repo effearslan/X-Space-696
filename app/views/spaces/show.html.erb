@@ -5,14 +5,23 @@
         <div class=" img-name-container">
           <h2 class='main-space-name-abs title-text-space'><%= @space.name %></h2>
           <div>
-              <% @space.photos.each do |photo| %>
+
+              <% if @space.photos.presence %>
+                <% @space.photos.each do |photo| %>
                   <%=cl_image_tag photo.key, class:'bagimageholder'%>
-              <% end %>
+                <% end %>
+              <%else%>
+                <img src="https://images.unsplash.com/photo-1448582649076-3981753123b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bHVnZ2FnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" class="card-image" alt="luggage image">
+              <%end%>
           </div>
         </div>
+
+
+
+
         <div class="info-space-card">
           <div class="dimension-space-card d-flex">
-            <h2 class='title-text-space'>Parameters</h2>
+            <h2 class='title-text-space'>Dimensions</h2>
             <h4 class='result-text-space'> width: <%= @space.width %> cm</h4>
             <h4 class='result-text-space'>height: <%= @space.height %> cm</h4>
             <h4 class='result-text-space'>depth: <%= @space.depth %> cm</h4>
