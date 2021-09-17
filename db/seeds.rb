@@ -9,15 +9,9 @@ User.destroy_all
 Space.destroy_all
 Booking.destroy_all
 
-user_1 = User.create!(name: "User-1", email: "user1@user.com", password: "password")
-user_2 = User.create!(name: "User-2", email: "user2@user.com", password: "password")
-user_3 = User.create!(name: "User-3", email: "user3@user.com", password: "password")
-
-space_1 = Space.create!(travel_date: Date.today, height: 10, width:10, depth:10, price: 100, destination: "Paris", location: "Istanbul", name:"Space-1", user: user_1)
-space_2 = Space.create!(travel_date: Date.today + 1, height: 20, width:20, depth:20, price: 200, location: "London", destination: "New York", name:"Space-2", user: user_2)
-space_3 = Space.create!(travel_date: Date.today + 2, height: 30, width:30, depth:30, price: 300, location: "Madagascar", destination: "Beijing", name:"Space-3", user: user_3)
-
-
-booking_1 = Booking.create!(total_price: 1000, status: "Approved", user: user_1, space: space_3)
-booking_2 = Booking.create!(total_price: 2000, status: "Pending", user: user_2, space: space_1)
-booking_3 = Booking.create!(total_price: 3000, status: "Declined", user: user_3, space: space_2)
+jack = User.create!(name: "Jack", email: "jack@user.com", password: "password")
+hayri = User.create!(name: "Hayri", email: "hayri@user.com", password: "password")
+penelope = User.create!(name: "Penelope", email: "penelope@user.com", password: "password")
+ronaldo = User.create!(name: "Ronaldo", email: "ronaldo@user.com", password: "password")
+zeynep = User.create!(name: "Zeynep", email: "zeynep@user.com", password: "password")
+tilda = User.create!(name: "Tilda", email: "tilda@user.com", password: "password")
