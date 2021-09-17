@@ -1,12 +1,15 @@
 <h2 class='available-spaces-header'>Available Spaces</h2>
 <div class="card-wrapper">
   <% @spaces.each do |space| %>
-  <%# <a class="card" style="--bg-img: url(https://images.unsplash.com/photo-1610244767159-0f9797ff1926?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bHVnZ2FnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60
-  )"> %>
   <div class="card-space">
+    <span class="card-user-name"><%= space.user.name  %>'s</span><span> baggage</span>
     <div class='card-info'>
-      <img src="https://images.unsplash.com/photo-1448582649076-3981753123b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bHVnZ2FnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
-          " alt="luggage image">
+      <% if space.photos.presence %>
+        <%# raise %>
+        <%= cl_image_tag space.photos.first.key , class:'card-image' %>
+      <%else%>
+        <img src="https://images.unsplash.com/photo-1448582649076-3981753123b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bHVnZ2FnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" class="card-image" alt="luggage image">
+      <%end%>
       <li class='title'><%= space.name %> </li>
       <li class='card-text'><span>From: </span><%= space.location %></li>
       <li class='card-text'><span>To: </span><%= space.destination %></li>
