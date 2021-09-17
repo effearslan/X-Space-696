@@ -15,9 +15,15 @@ $white: white;
   color: $dark-blue;
 }
 
-img {
+.card-image {
   width: 100%;
+  height: 250px;
   opacity: 0.8;
+  margin-right: 0px;
+  border-radius: 5%;
+  border: 1px solid #438d9786;
+  padding: 3px;
+  box-shadow: 2px 3px #a0e3ec86;
 }
 
 span {
@@ -35,7 +41,11 @@ span {
 }
 .card-info {
   padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
 }
+
 .card-space {
   padding: 2rem 0 0 0;
   margin: 0 auto;
